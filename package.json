@@ -1,0 +1,21 @@
+{
+  "name": "express-biztime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "pg": "^8.6.0",
+    "slugify": "^1.5.3",
+    "supertest": "^6.1.3"
+  }
+}
