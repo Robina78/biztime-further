@@ -7,8 +7,9 @@ const router = new express.Router();
 router.get('/', async (req, res, next) => {
     try {
         const result = await db.query(
-            `SELECT code, name, description 
-            FROM companies ORDER BY name`);  
+            `SELECT code, name 
+            FROM companies 
+            ORDER BY name`);  
 
         return res.json({ "companies": result.rows });
     } catch(e) {
@@ -85,7 +86,7 @@ router.delete('/:code', async (req, res, next) => {
              RETURNING code`, 
              [req.params.code]);
         
-        if (result.rows.length == 0) {
+        if (result.rows.length === 0) {
             throw new ExpressError(`No such company: ${code}`, 404);
         }    
         return res.json({ "status": "deleted" });
